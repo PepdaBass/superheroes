@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('superhero/', include('superhero.urls')),
     path('', RedirectView.as_view(url='/superhero/')),
+    
 ]
