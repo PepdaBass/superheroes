@@ -7,10 +7,13 @@
     <title>Superhero Index</title>
 </head>
 <body>
+    {% load static %}
+    <img src="{% static 'superhero/yulia-matvienko-kgz9vsP5JCU-unsplash.jpg' %}" alt="Batman and Superman legos.">
     <h1>List of Heroes</h1>
     <ul>
         {% for hero in all_heroes %}
         <li> <h2>{{hero.name}} - <a href="{% url 'superhero:detail' hero.id %}"> Click for details</a> 
+            <a href="{% url 'superhero:edit' hero.id %}">Edit Hero Details</a>
             <a href="{% url 'superhero:delete' hero.id %}">Delete Hero</a></h2> </li>
         {% endfor %}
     </ul>
