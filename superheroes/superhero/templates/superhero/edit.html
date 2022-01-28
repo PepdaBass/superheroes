@@ -7,13 +7,13 @@
     <title>Edit Hero Details</title>
 </head>
 <body>
-    <form action="{% url 'superhero:edit' 2 %}" method="post">
+    <form action="{% url 'superhero:edit' single_hero.id %}" method="post">
         {% csrf_token %} 
-        Name: {{single_hero.name}} <input type="text" name="name" id="name"><br />
-        Alter ego: {{single_hero.alter_ego}} <input type="text" name="alter_ego" id="alter_ego"><br />
-        Primary Ability: {{single_hero.primary_ability}} <input type="text" name="primary" id="primary"><br />
-        Secondary Ability: {{single_hero.secondary_ability}} <input type="text" name="secondary" id="secondary"><br />
-        Catchphrase: {{single_hero.catchphrase}} <input type="text" name="catchphrase" id="catchphrase"><br />
+        Name: <input type="text" name="name" id="name" value="{{single_hero.name}}"><br />
+        Alter ego: <input type="text" name="alter_ego" id="alter_ego" value="{{single_hero.alter_ego}}"><br />
+        Primary Ability:  <input type="text" name="primary" id="primary" value="{{single_hero.primary_ability}}"><br />
+        Secondary Ability:  <input type="text" name="secondary" id="secondary" value="{{single_hero.secondary_ability}}"><br />
+        Catchphrase:  <input type="text" name="catchphrase" id="catchphrase" value="{{single_hero.catchphrase}}"><br />
         <input type="submit" value="Change Detail(s)!">
     </form>
     <a href="{% url 'superhero:index' %}">Homepage</a>
